@@ -176,7 +176,6 @@ class PCF8574I2CBackpackInterface(BaseInterface):
             pos = 7 - i
             self._set_bit(pos, (byte >> pos) & 1)
 
-
     def _set_bit(self, pos, val):
         """Sets a bit at a specific position to a specific value.
 

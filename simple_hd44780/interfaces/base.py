@@ -216,7 +216,8 @@ class BaseInterface(metaclass=ABCMeta):
             :matrix_size: Boolean/Integer - True/1 for 5x10 character size.  False/0 for 5x7 character size.
             :increment_direction: - Boolean/Integer - True/1 to increment as we move to the right.  False/0 to
             increment as we move to the left.
-            :display_shift: - Boolean/Integer - True/1 to enable display-shifting.  False/0 to disable display-shifting.
+            :display_shift: - Boolean/Integer - True/1 to enable display-shifting.  False/0 to disable
+            display-shifting.
         """
         self._static_initialization()
 
@@ -232,7 +233,7 @@ class BaseInterface(metaclass=ABCMeta):
             self._pulse_enable_signal()
             self.delay(1000)
 
-            self.send_data( function_set_command | (lines << 3) | (matrix_size << 2) )
+            self.send_data(function_set_command | (lines << 3) | (matrix_size << 2))
 
         # Static byte.
         self.send_data(0x08)
